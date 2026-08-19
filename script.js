@@ -214,6 +214,9 @@ allCards.forEach(allCard => {
    
    const historyItem=document.createElement("div");
    historyItem.className = `
+        flex
+        justify-between
+        items-center
         bg-gray-50
         p-3
         rounded-lg
@@ -231,7 +234,7 @@ allCards.forEach(allCard => {
                 ${allCard.number}
             </p>
         </div>
-        <p class="text-gray-500 text-xs">
+        <p class="text-gray-500 text-xs mt-1">
             ${callTime}
         </p>
     `;
