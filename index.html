@@ -18,58 +18,93 @@
 <body>
     <div class="max-w-auto mx-auto my-auto bg-[#F5FFF6]">
 
-        <!-- nav bar starts here -->
+   
 
-    <div class="flex justify-between bg-white">
+  <!-- nav bar starts here -->
 
-        <!-- emergency service text +logo -->
-       
-            <div class="flex ml-[60px] gap-2 mt-[25px] mb-[25px]">
-             <img class="h-[50px] w-[50px]" src="./assets/logo.png" alt="">
-             <h2 class="text-[#006747] font-extrabold">Emergency <br> Service</h2>
-        </div>
+<div class="flex flex-col md:flex-row md:justify-between bg-white">
 
-        <!-- buttons -->
-        <div class="flex justify-end mt-[24px] mr-[60px] gap-2 p-2">
-            
-            <!-- heart button -->
-           <button class="btn bg-[#EDFFF1] border-[#EDFFF1] rounded-full font-normal gap-2 px-6 "> 
-            <h2 id="heart-count" class="font-bold text-xl text-black">0</h2>
-            <img class="w-[30px] h-[30px]" src="./assets/heart.png" alt="">
-           </button>
-        
-           <!-- coin button -->
-           <button class="btn bg-[#EDFFF1] border-[#EDFFF1] rounded-full font-normal gap-2 px-6"> 
-            <h2 id="coin-count" class="font-bold text-xl text-black">100</h2>
-            <img class="w-[30px] h-[30px]" src="./assets/coin.png" alt="">
-           </button>
+    <!-- emergency service text + logo -->
+    <div class="flex flex-col md:flex-row items-center ml-0 md:ml-[60px] gap-1 md:gap-2 my-3 md:my-[25px]">
 
-           <!-- copy button -->
-           <button class="btn bg-[#00A63E] border-[#00A63E] rounded-full text-white font-normal px-8">
-             <span id="copy-count">0</span> Copy
-           </button>
-        
+        <img 
+            class="h-[45px] w-[45px] md:h-[50px] md:w-[50px]" 
+            src="./assets/logo.png" 
+            alt=""
+        >
 
-        </div>
+        <h2 class="text-[#006747] font-extrabold text-center md:text-left">
+            Emergency <br> Service
+        </h2>
+
     </div>
 
+
+    <!-- buttons -->
+    <div class="flex justify-center md:justify-end items-center mr-0 md:mr-[60px] mb-3 md:mb-[25px] gap-2">
+
+        <!-- heart button -->
+        <button class="btn bg-[#EDFFF1] border-[#EDFFF1] rounded-full font-normal gap-2 px-4 md:px-6">
+
+            <h2 id="heart-count" class="font-bold text-lg md:text-xl text-black">
+                0
+            </h2>
+
+            <img 
+                class="w-[25px] h-[25px] md:w-[30px] md:h-[30px]" 
+                src="./assets/heart.png" 
+                alt=""
+            >
+
+        </button>
+
+
+        <!-- coin button -->
+        <button class="btn bg-[#EDFFF1] border-[#EDFFF1] rounded-full font-normal gap-2 px-4 md:px-6">
+
+            <h2 id="coin-count" class="font-bold text-lg md:text-xl text-black">
+                100
+            </h2>
+
+            <img 
+                class="w-[25px] h-[25px] md:w-[30px] md:h-[30px]" 
+                src="./assets/coin.png" 
+                alt=""
+            >
+
+        </button>
+
+
+        <!-- copy button -->
+        <button class="btn bg-[#00A63E] border-[#00A63E] rounded-full text-white font-normal px-5 md:px-8">
+
+            <span id="copy-count">0</span> Copy
+
+        </button>
+
+    </div>
+
+</div>
+
      <!-- hero section starts here -->
-<div class="text-center bg-[linear-gradient(to_right,#013223_0%,#006747_50%,#013223_100%)]  flex flex-col items-center justify-center gap-3 py-8 mb-10">
-    <img class="h-[92px] w-[92px] " src="./assets/logo-dark.png" alt="">
+<div class="text-center bg-[linear-gradient(to_right,#013223_0%,#006747_50%,#013223_100%)]  flex flex-col items-center justify-center gap-3 py-6 md:py-8 px-4 mb-6 md:mb-10">
+    <img class="h-[65px] w-[65px] md:h-[92px] md:w-[92px]" src="./assets/logo-dark.png" alt="">
     <h1 class="text-white font-bold text-3xl">Emergency Service Directory</h1>
-    <h2 class="text-white">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</h2>
+    <h2 class="text-white text-sm md:text-base max-w-4xl">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh
+
+    </h2>
 </div>
  
 
 
 <!-- main section starts here -->
 
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 m-5">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 px-5">
     <!-- <div class="bg-[#F5FFF6] py-8"> -->
 
     <!-- Cards container -->
      <div class="lg:col-span-3">
-    <div  id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-1 " >
+    <div  id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  " >
         
 
         <!-- JavaScript will generate all the cards here -->

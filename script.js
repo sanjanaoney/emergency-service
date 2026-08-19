@@ -102,14 +102,11 @@ allCards.forEach(allCard => {
 
     card.className = `
         
-    w-auto
-    h-auto
+    w-full
     shadow-sm
     rounded-xl
     bg-white
-    p-10
-       
-
+    p-5
 `;
     
 
@@ -135,7 +132,7 @@ allCards.forEach(allCard => {
 
 
         <!-- Text + Number -->
-        <div class="mt-5">
+        <div class="mt-5 >
 
             <h1 class="font-bold text-black text-xl">
                 ${allCard.title}
