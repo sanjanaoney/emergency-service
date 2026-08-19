@@ -1,3 +1,7 @@
+let heartCount=0;
+let coinCount=100;
+let copyCount=0;
+
 const allCards = [
     {
         title: "National Emergency Number",
@@ -83,6 +87,13 @@ const allCards = [
 
 
 const cardContainer = document.getElementById("card-container");
+const historyContainer=document.getElementById("history-container");
+const clearHistory=document.getElementById("clear-history");
+
+clearHistory.addEventListener("click",function(){
+    historyContainer.innerHTML="";
+});
+
 
 
 allCards.forEach(allCard => {
@@ -90,17 +101,22 @@ allCards.forEach(allCard => {
     const card = document.createElement("div");
 
     card.className = `
-        w-full
-        shadow-sm
-        rounded-xl
-        bg-white
-        p-5
-    `;
+        
+    w-auto
+    h-auto
+    shadow-sm
+    rounded-xl
+    bg-white
+    p-10
+       
+
+`;
+    
 
     card.innerHTML = `
         
         <!-- Icon + Heart -->
-        <div class="flex justify-between items-start">
+        <div class="flex justify-between ">
 
             <div 
                 class="rounded-xl h-[60px] w-[60px] flex items-center justify-center"
@@ -113,7 +129,7 @@ allCards.forEach(allCard => {
                 >
             </div>
 
-            <i class="fa-regular fa-heart text-gray-400 text-lg"></i>
+            <i class=" heart-icon fa-regular fa-heart text-gray-400 text-lg"></i>
 
         </div>
 
@@ -141,15 +157,15 @@ allCards.forEach(allCard => {
 
 
         <!-- Copy + Call Buttons -->
-        <div class="flex gap-2 mt-5">
+        <div class="flex gap-2 mt-auto pt-4">
 
-            <button class="btn bg-white border border-gray-200 rounded-xl font-normal text-gray-500 flex-1">
+            <button class="btn bg-white border border-gray-200 rounded-xl font-normal text-gray-500 flex-1 copy-button">
                 <i class="fa-regular fa-copy"></i>
                 Copy
             </button>
 
-            <button class="btn bg-[#00A63E] border-[#00A63E] rounded-xl font-normal text-white flex-1">
-                <i class="fa-solid fa-phone"></i>
+            <button class="btn bg-[#00A63E] border-[#00A63E] rounded-xl font-normal text-white flex-1 call-button">
+                <i class=" fa-solid fa-phone"></i>
                 Call
             </button>
 
@@ -158,4 +174,91 @@ allCards.forEach(allCard => {
 
     cardContainer.appendChild(card);
 
+
+    //copy count functionality
+
+    const copyButton=card.querySelector(".copy-button")
+    copyButton.addEventListener("click",function(){
+        navigator.clipboard.writeText(allCard.number);
+        copyCount++;
+        document.getElementById("copy-count").innerText=copyCount;
+        alert(`Copied ${allCard.number}`);
+    })
+
+
+    //heart functionality
+    const heartIcon=card.querySelector(".heart-icon");
+    heartIcon.addEventListener("click",function(){
+      //console.log("heart icon clicked") 
+      heartCount++;
+      document.getElementById("heart-count").innerText=heartCount;
+    })
+
+    //call button functionality
+   const callButton=card.querySelector(".call-button")
+   callButton.addEventListener("click",function(){
+    if(coinCount<20){
+        alert("You don't have enough coins to make this call")
+        return;
+    }
+    coinCount=coinCount-20;
+    document.getElementById("coin-count").innerText=coinCount;
+    //console.log("call button clicked")
+    alert(`Calling ${allCard.title} at ${allCard.number}`)
+
+    //getting call time
+   const callTime = new Date().toLocaleTimeString();
+
+   //adding call history
+
+   
+   const historyItem=document.createElement("div");
+   historyItem.className = `
+        bg-gray-50
+        p-3
+        rounded-lg
+        mb-2
+    `;
+
+    historyItem.innerHTML = `
+        <div>
+       
+            <h3 class="font-bold text-sm text-black">
+                ${allCard.title}
+            </h3>
+
+            <p class="text-gray-500 text-xs">
+                ${allCard.number}
+            </p>
+        </div>
+        <p class="text-gray-500 text-xs">
+            ${callTime}
+        </p>
+    `;
+
+    historyContainer.appendChild(historyItem);
+
+   
+    })
+
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

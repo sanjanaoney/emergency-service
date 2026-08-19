@@ -34,19 +34,19 @@
             
             <!-- heart button -->
            <button class="btn bg-[#EDFFF1] border-[#EDFFF1] rounded-full font-normal gap-2 px-6 "> 
-            <h2 class="font-bold text-xl text-black">0</h2>
+            <h2 id="heart-count" class="font-bold text-xl text-black">0</h2>
             <img class="w-[30px] h-[30px]" src="./assets/heart.png" alt="">
            </button>
         
            <!-- coin button -->
            <button class="btn bg-[#EDFFF1] border-[#EDFFF1] rounded-full font-normal gap-2 px-6"> 
-            <h2 class="font-bold text-xl text-black">100</h2>
+            <h2 id="coin-count" class="font-bold text-xl text-black">100</h2>
             <img class="w-[30px] h-[30px]" src="./assets/coin.png" alt="">
            </button>
 
            <!-- copy button -->
            <button class="btn bg-[#00A63E] border-[#00A63E] rounded-full text-white font-normal px-8">
-              2 Copy
+             <span id="copy-count">0</span> Copy
            </button>
         
 
@@ -63,20 +63,58 @@
 
 
 <!-- main section starts here -->
-<div class="bg-[#F5FFF6] py-8">
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 m-5">
+    <!-- <div class="bg-[#F5FFF6] py-8"> -->
 
     <!-- Cards container -->
-    <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-8">
+     <div class="lg:col-span-3">
+    <div  id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-1 " >
+        
 
         <!-- JavaScript will generate all the cards here -->
 
     </div>
+    </div>
+
+<!-- </div> -->
+
+
+<!-- history section starts here -->
+
+<div class="lg:col-span-1">
+
+    <!-- History Header -->
+    <div class="bg-white rounded-xl p-5">
+
+        <div class="flex justify-between items-center">
+
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-clock text-gray-600"></i>
+
+                <h2 class="text-black font-bold">
+                    Call History
+                </h2>
+            </div>
+
+            <button id="clear-history" class="btn bg-[#00A63E] border-[#00A63E] rounded-xl font-normal text-white">
+                Clear
+            </button>
+
+        </div>
+
+        <!-- History items -->
+        <div id="history-container" class="mt-3">
+        </div>
+
+    </div>
 
 </div>
-<!-- main section ends here -->
+
 
 
 </div>
+
 
 <script src="./script.js"></script>
 </body>
