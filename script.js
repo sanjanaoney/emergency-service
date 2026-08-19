@@ -116,11 +116,11 @@ allCards.forEach(allCard => {
         <div class="flex justify-between ">
 
             <div 
-                class="rounded-xl h-[60px] w-[60px] flex items-center justify-center"
+                class="rounded-xl h-[60px] w-[60px] flex items-center justify-center "
                 style="background-color: ${allCard.iconBg};"
             >
                 <img 
-                    class="w-[30px] h-[30px]" 
+                    class="w-[30px] h-[30px] " 
                     src="${allCard.image}" 
                     alt="${allCard.title}"
                 >
@@ -132,7 +132,7 @@ allCards.forEach(allCard => {
 
 
         <!-- Text + Number -->
-        <div class="mt-5 >
+        <div class="mt-5" >
 
             <h1 class="font-bold text-black text-xl">
                 ${allCard.title}
