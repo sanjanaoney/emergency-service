@@ -19,18 +19,13 @@ Example:
 const paragraph = document.createElement("p");
 paragraph.innerText = "Hello World";
 paragraph.classList.add("text");
-document.body.appendChild(paragraph);
-Here, a new <p> element is created, its text is added, and then it is inserted inside the <body>.
+document.body.appendChild(paragraph); Here, a new paragraph element is created, its text is added, and then it is inserted inside the body.
 
 
 
 Answer-3:
 Event Bubbling means that when an event happens on an element, the event can move upward through its parent elements.
-For example, a button is inside a <div>:
-<div>
-    <button>Click</button>
-</div>
-If the button is clicked, the click event happens on the button first. Then it can bubble up to the <div>, and then to other parent elements.
+For example, if a button is inside a div and the button is clicked, the click event happens on the button first. Then it can bubble up to the <div>, and then to other parent elements.
 This is called bubbling because the event moves from the target element upward toward the document.
 
 
